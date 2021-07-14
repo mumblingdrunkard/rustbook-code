@@ -28,4 +28,12 @@ fn main() {
     generate_workout(simulated_user_specified_value, simulated_random_number);
 
     println!("Hello, world!");
+
+    // Closures can capture their environment unlike functions
+    let x = vec![1, 2, 3];
+    let equal_to_x = move |z: &Vec<_>| *z == x;
+
+    let y = vec![1, 2, 3];
+    assert!(equal_to_x(&y));
+    assert!(equal_to_x(&y));
 }
